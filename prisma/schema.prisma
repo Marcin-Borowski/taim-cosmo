@@ -13,11 +13,12 @@ datasource db {
 model Post {
   id        Int      @id @default(autoincrement())
   title     String
+  slug      String
   abstract  String
   content   String?
-  date      DateTime
+  date      DateTime 
   active    Boolean  @default(false)
-  author    User     @relation(fields: [author_id], references: [id])
+  author    User?     @relation(fields: [author_id], references: [id])
   author_id Int
 }
 

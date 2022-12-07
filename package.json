@@ -28,6 +28,7 @@
     "@tinymce/tinymce-svelte": "^1.0.0",
     "axios": "^1.2.0",
     "qs": "^6.11.0",
+    "slugify": "^1.6.5",
     "svelte-select": "^4.4.7"
   }
 }

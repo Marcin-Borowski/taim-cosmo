@@ -1,10 +1,20 @@
 import { json } from "@sveltejs/kit"
+import { PrismaClient } from "@prisma/client"
 
+export let GET = async ({ params }) => {  
+  const { slug } = params;
 
-export let GET = async ({ params, request }) => {
-  
-  console.log(params)
-  console.log(request)
+  const prisma = new PrismaClient();
+  const posts = await prisma.post.findFirst({
+    select: {
+      title: true,
+      slug: true,
+      abstract: true
+    },
+    where: {
+      slug: slug
+    }
+  })
 
-  return json({tekst: "ala ma sluga"})
+  return json(posts)
 }

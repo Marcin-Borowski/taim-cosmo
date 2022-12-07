@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client"
+import slugify from "slugify";
 
 
 export const load = async () => {
@@ -27,23 +28,34 @@ export const load = async () => {
 export const actions = {
   create: async ({ request }) => {
     const data = await request.formData();
-    
+
+    console.log(data);
+
     const title = data.get('title');
+    const slug = slugify(title, { lower: true, locale: 'pl' })
     const abstract = data.get('abstract');
     const content = data.get('content');
-    const date = data.get('date');
-    const author_id = data.get('date')?.id;
-    
-    // const prisma = new PrismaClient();
-    // const result = await prisma.post.create({
-    //   title,
-    //   abstract,
-    //   content,
-    //   date,
-    //   author_id
-    // })
+    const date = new Date(data.get('date'));
+    const author_id = parseInt(data.get('author_id'));
 
-    console.log(title)
-    return { success: true }
+    const prisma = new PrismaClient();
+    const result = await prisma.post.create({
+      data: {
+        title,
+        slug,
+        abstract,
+        content,
+        date,
+        active: true,
+        author_id
+      }
+    })
+
+    if (result) {
+      return { success: true, post: result }
+    } else {
+      return { success: false }
+    }
+
   }
 }
