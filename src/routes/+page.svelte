@@ -1,4 +1,5 @@
 <script>
+	import { API_URL } from '$lib/utils/constants';
   import ProductTeaser from "$lib/components/ProductTeaser.svelte";
   import Section from "$lib/components/Section.svelte";
 
@@ -6,7 +7,7 @@
   let title = "Must have";
   let { posts, pageTitle } = data;
 
-  const onCokolwiek = (event) => {
+  const onCokolwiek =  (event) => {
     const {title, url} = event.detail;
     alert(title)
     
@@ -25,7 +26,7 @@
 <Section {title}>
   <div class="grid grid-cols-3 gap-4">
     {#each posts as item, i}
-      <ProductTeaser lp={i} {...item} on:cokolwiek={onCokolwiek} />
+      <ProductTeaser lp={i} {...item} img={`${API_URL}${item.image.original}`} />
     {/each}
   </div>
 </Section>

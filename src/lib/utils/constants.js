@@ -1,1 +1,3 @@
 export const APP_NAME = "COSMO";
+export const API_URL = "http://localhost:1337"
+export const API_TOKEN = "ddf3e1cee344a59272b92be7279c4c9074cf1cf5d89b44b3e4b860ca07da6650255c05254a9bc7eff731c2b10b033573ea9d954bac23cc9ea75c68e75a2cc0b3c817cda5f2f1a6bc776ef0f20994409e38a4e9d3861864f9cb5b01fbdb19f89626d50688a73cb310aa9fe9f9793bac1ef4bdb0e2cb43840d7d640a2ad5ad2372"

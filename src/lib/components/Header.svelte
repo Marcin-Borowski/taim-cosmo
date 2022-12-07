@@ -4,7 +4,7 @@
 </script>
 
 
-<header class="sticky top-0 bg-white text-gray-600 body-font border-b border-stone-300 shadow-sm shadow-orange-500">
+<header class="sticky z-50 top-0 bg-white text-gray-600 body-font border-b border-stone-300 shadow-sm shadow-orange-500">
   <div class="container max-w-4xl mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-amber-500 rounded-full" viewBox="0 0 24 24">
